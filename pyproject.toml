@@ -12,6 +12,7 @@ detoxify = "^0.2.2"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
+sphinx-autodoc-typehints = "^1.12.0"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

@@ -1,5 +1,13 @@
-from insult_ai import __version__
 
+import click.testing
+import pytest
+from insult_ai import console
 
-def test_version():
-    assert __version__ == '0.1.0'
+@pytest.fixture
+def runner():
+    """Reusable helper function."""
+    return click.testing.CliRunner()
+
+def test_insult_me_succeeds(runner):
+    result = runner.invoke(console.insult_me, ['--message="You look nice."'])
+    assert result.exit_code == 0
